@@ -9,14 +9,12 @@ $(document).ready(function(){
     var unanswered = 0;
 
 // Questions and Answer Arrays
-    var question = ["What is Lord Voldemort's real name?",
-    "Who was Dumbledore's immediate predecessor as Headmaster or Headmistress at Hogwarts?", "Whose mother was Rowena Ravenclaw?", "What was Voldemort's mother's maiden name?", "How many points is the Golden Snitch worth?",
-    "What is the only antidote to Basilisk's venom?", "What is the symbol for Gryffindor house?", "Who destroyed the last remaining Horcrux?"];
-    var answer = ["Tom Marvolo Riddle", "Armando Dippet", "The Grey Lady", "Gaunt", "150", "Phoenix Tears", "A Lion", "Neville Longbottom", "A Lion", "Neville Longbottom"];
-    var firstChoice = ["Tom Marvolo Riddle", "Phineas Nigellus Black", "Moaning Myrtle", "Riddle", "50", "Phoenix Tears", "A Badger", "Ginny Weasley"];
-    var secondChoice = ["Gellert Grindelwald", "Dexter Fortescue", "Lily Potter", "Clearwater", "500", "Dragon's Blood", "An Eagle", "Neville Longbottom"];
-    var thirdChoice = ["Salazar Slytherin", "Armando Dippet", "The Grey Lady", "Peverell", "100", "Mandrake Draught", "A Lion", "Severus Snape"];
-    var fourthChoice = ["Morfin Gaunt", "Dilys Derwent", "The Fat Lady", "Gaunt", "150", "A Bezoard", "A Snake", "Viktor Krum"];
+    var question = ["How many Tenets did the Dark Brotherhood originally follow?","What race was the Night Mother in life?","Which of the following Daedra is once said to have appeared as the Night Mother, however this was later deemed incorrect?","What is the Blade of Woe?","What Dark Brotherhood rank does the jester Cicero retain at the time when he arrives in the Falkreath Sanctuary in Skyrim?","What race are the Shadowscales?","In which city in Cyrodiil can the Hero of Kvatch enter a Sanctuary?"];
+    var answer = ["Five","Dunmer","Mephala","A Daedric Artefact","Keeper","Argonian","Cheydinhal","Shadowmere"];
+    var firstChoice = ["Five","Dunmer","Molag Bal","A sword","Murderer","Kajiit","Bruma","Darkracer"];
+    var secondChoice = ["Three","Nord","Meridia","A Daedric Artefact","Silencer","Dov","Bravil","Frost"];
+    var thirdChoice = ["Ten","Altmer","Mephala","A poem","Keeper","Hist","Kvatch","Shadowmere"];
+    var fourthChoice = ["Fifty-two","Daedra","Azura","A dagger","Listener","Argonian","Cheydinhal","Evilmane"];
 
 // Show & Hide Functions
     function showHolders() {
@@ -50,7 +48,7 @@ $(document).ready(function(){
         $("#choice-holder-2").html(secondChoice[count]);
         $("#choice-holder-3").html(thirdChoice[count]);
         $("#choice-holder-4").html(fourthChoice[count]);
-    
+
     // Hover CSS
         $("#choice-holder-1").hover(function() {
             $(this).css("color", "gray");
@@ -77,7 +75,7 @@ $(document).ready(function(){
             $(this).css("color", "black");
         });
     }
-    $("#choice-holder-1").on("click", checkAnswer) 
+    $("#choice-holder-1").on("click", checkAnswer)
     $("#choice-holder-2").on("click", checkAnswer)
     $("#choice-holder-3").on("click", checkAnswer)
     $("#choice-holder-4").on("click", checkAnswer)
@@ -104,9 +102,9 @@ $(document).ready(function(){
             displayImage();
             incorrect++;
             count++;
-        } 
+        }
 
-        checkGameEnd();  
+        checkGameEnd();
     }
 
 // Chekc End Game Function
@@ -130,7 +128,7 @@ $(document).ready(function(){
     function displayTime() {
         time--;
         $("#time-holder").html("Time remaining: " + time);
-      
+
             if(time <= 0) {
                 hideHolders();
                 stopTime();
@@ -162,39 +160,39 @@ $(document).ready(function(){
     function displayImage() {
         if(count === 0) {
             $("#image-holder").show();
-            $("#image-holder").html('<img src="assets/images/tom_marvolo_riddle.jpg">');
+            $("#image-holder").html('<img src="assets/images/tenents.jpg">');
         }
         else if(count === 1) {
             $("#image-holder").show();
-            $("#image-holder").html('<img src="assets/images/armando_dippet.jpg">');
+            $("#image-holder").html('<img src="assets/images/nightmother.jpg">');
         }
         else if(count === 2) {
             $("#image-holder").show();
-            $("#image-holder").html('<img src="assets/images/helena_ravenclaw.png">');
+            $("#image-holder").html('<img src="assets/images/mephala.jpg">');
         }
         else if(count === 3) {
             $("#image-holder").show();
-            $("#image-holder").html('<img src="assets/images/merope_gaunt.png">');
+            $("#image-holder").html('<img src="assets/images/bladeofwoe.jpg">');
         }
         else if(count === 4) {
             $("#image-holder").show();
-            $("#image-holder").html('<img src="assets/images/snitch.jpg">');
+            $("#image-holder").html('<img src="assets/images/cicero.png">');
         }
         else if(count === 5) {
             $("#image-holder").show();
-            $("#image-holder").html('<img src="assets/images/phoenix.jpg">');
+            $("#image-holder").html('<img src="assets/images/shadowscale.jpg">');
         }
         else if(count === 6) {
             $("#image-holder").show();
-            $("#image-holder").html('<img src="assets/images/lion.jpg">');
+            $("#image-holder").html('<img src="assets/images/sanct.png">');
         }
         else if(count === 7) {
             $("#image-holder").show();
-            $("#image-holder").html('<img src="assets/images/neville_longbottom.jpg">');
+            $("#image-holder").html('<img src="assets/images/shadowmere.png">');
         }
     }
 
- // Show Results Function   
+ // Show Results Function
     function showResults() {
         $("#correct-holder").show();
         $("#correct-holder").html("Correct: " + correct);
@@ -206,7 +204,7 @@ $(document).ready(function(){
         $("#restart-holder").html("Click Start above to play again!");
     }
 
-// Reset Results Function 
+// Reset Results Function
     function resetResults() {
         correct = 0;
         incorrect = 0;
